@@ -19,6 +19,8 @@ This will enable us to create a custom mouse reference genome, including all the
 - Add any additional gene sequences to the main `.fasta` file + their annotations to the `.gtf`
 - Here’s what matters in the gtf file:
     - The first column name should be the same in different parts like so:
+
+  
       `IRES    transgene   exon    1   617     .   +   .   gene_id "IRES"; transcript_id "IRES"; gene_name "IRES"; gene_biotype "protein_coding";`
       Right above is an example of how one line (corresponds to 1 gene) should look like. 
 - The command used to run this is the following:
