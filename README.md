@@ -4,6 +4,9 @@ Assessing how well a transfection worked using droplet-based scRNAseq.
 ## Experiment overview: 
 1 control and 1 experimental mouse sample were sequenced using 10x Genomics scRNA-seq technology. The results are aligned to the mouse reference genome. By examining the number of cells expressing various transgene, we aim to verify how well the transfection experiment has worked. 
 
+## Bioinformatics tools required: 
+The user needs to have CellRanger, which can be easily installed following this tutorial: https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-in
+
 ## Alignment to the reference genome 
 - The mouse reference genome can be found at: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/ 
 - However, this does not include the transgenes we have added
@@ -18,3 +21,9 @@ Assessing how well a transfection worked using droplet-based scRNAseq.
     - The first column name should be the same in different parts like so:
       `IRES    transgene   exon    1   617     .   +   .   gene_id "IRES"; transcript_id "IRES"; gene_name "IRES"; gene_biotype "protein_coding";`
       Right above is an example of how one line (corresponds to 1 gene) should look like. 
+- The command used to run this is the following:
+  `cellranger_bin, "count",
+        f"--id={sample_id}",
+        f"--fastqs={sample_fastq}",  # Still pointing to the FASTQ location in the home directory.
+        f"--transcriptome={ref_path}", # upstream path to the ref folder 
+        "--create-bam=false"`
