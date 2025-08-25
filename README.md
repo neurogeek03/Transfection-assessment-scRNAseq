@@ -22,6 +22,8 @@ This will enable us to create a custom mouse reference genome, including all the
 
   
       `IRES    transgene   exon    1   617     .   +   .   gene_id "IRES"; transcript_id "IRES"; gene_name "IRES"; gene_biotype "protein_coding";`
+
+
       Right above is an example of how one line (corresponds to 1 gene) should look like. 
 - The command used to run this is the following:
 
