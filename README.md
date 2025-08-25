@@ -11,7 +11,7 @@ The user needs to have CellRanger, which can be easily installed following this 
 - However, this does not include the transgenes we have added
 - Before running the alignment, we need to create a custom reference, including all the genes we wish to see reads for
 
-### 1. "Make reference" - CellRanger 
+## 1. "Make reference" - CellRanger 
 This will enable us to create a custom mouse reference genome, including all the genes we're interested in
 - To do this, we need:
     1. A `.fasta` file ⇒ contains the sequence of the transgene(s) ⇒ will be aligned to the ref genome
@@ -34,6 +34,6 @@ This will enable us to create a custom mouse reference genome, including all the
         f"--transcriptome={ref_path}", # upstream path to the ref folder 
         "--create-bam=false"`
 
-### 2. "Count" - CellRanger
+## 2. "Count" - CellRanger
 This will perform alignment to the reference genome and count the number reads per gene.
     
