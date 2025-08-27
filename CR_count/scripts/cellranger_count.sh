@@ -14,5 +14,5 @@ cd $SLURM_SUBMIT_DIR
     --id=Tianze_BDNF_IRES_Cellranger_marlen \
     --transcriptome=/scratch/mfafouti/Transfection_assessment_Tianze/CR_count/new_IRES_Mouse_Reference \
     --fastqs=/project/rrg-shreejoy/TianzeData/Tianze_raw_data/20250314_LH00244_0269_B22W7KJLT3_Tomoda_Tianze/fastq/merged \
-    --sample=BDNF \
+    --sample=ppBDNF \
     --create-bam=true
