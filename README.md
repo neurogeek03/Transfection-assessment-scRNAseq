@@ -26,14 +26,20 @@ This will enable us to create a custom mouse reference genome, including all the
 
       Right above is an example of how one line (corresponds to 1 gene) should look like. 
 - The command used to run this is the following:
-
-
-  `cellranger_bin, "count",
-        f"--id={sample_id}",
-        f"--fastqs={sample_fastq}",  # Still pointing to the FASTQ location in the home directory.
-        f"--transcriptome={ref_path}", # upstream path to the ref folder 
-        "--create-bam=false"`
+```bash
+cellranger mkref \
+    --genome={upper/folder/w/ref/genome} \
+    --fasta={path/to/.fasta} \
+    --genes={path/to/.gtf}      # 
+```
 
 ## 2. "Count" - CellRanger
 This will perform alignment to the reference genome and count the number reads per gene.
-    
+This format allows you to set the variables earlier in your script.
+```bash
+  cellranger_bin, "count",
+        f"--id={sample_id}",
+        f"--fastqs={sample_fastq}",  # Still pointing to the FASTQ location in the home directory.
+        f"--transcriptome={ref_path}", # upstream path to the ref folder. If you made your own it will be the output of the mkref command above.
+        "--create-bam=false"
+```
